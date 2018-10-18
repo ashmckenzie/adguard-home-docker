@@ -1,0 +1,12 @@
+.:53 {
+    dnsfilter dnsfilter.txt {
+        querylog
+        blocked_ttl 10
+    }
+    hosts {
+        fallthrough
+    }
+    forward . tls://1.1.1.1 tls://1.0.0.1
+    cache
+    prometheus :9153
+}
